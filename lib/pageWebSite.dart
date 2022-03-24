@@ -1,12 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
-void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+class MyPage extends StatelessWidget {
+  const MyPage({Key? key}) : super(key: key);
 
   // This widget is the root of your application.
   @override
@@ -34,6 +30,11 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
+        actions: <Widget>[
+          IconButton(
+              onPressed: _Add,
+              icon: Icon(Icons.home))
+        ],
       ),
       body: const WebView(
         initialUrl: "https://labancaria.obliviondev.com.ar/",
@@ -41,5 +42,9 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
 
     );
+  }
+  void _Add()
+  {
+
   }
 }

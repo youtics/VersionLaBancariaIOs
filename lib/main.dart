@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:la_bancaria_mdp/HomeLaBancaria.dart';
 
 void main() {
   runApp(const MyApp());
@@ -24,14 +25,26 @@ class MyApp extends StatelessWidget {
       Widget build(BuildContext context)
       {
         return Scaffold(
-          appBar: AppBar(title: Text('Home'),),
+          appBar: AppBar(title: Text('La Bancaria MDP'),
+            actions: <Widget>[
+              IconButton(
+                  onPressed: ()_IrWebSite,
+                  icon: Icon(Icons.home))
+            ],
+
+          ),
           body: Center(
             // ignore: deprecated_member_use
             child: RaisedButton(onPressed: () {
-
+              Navigator.push(context, MaterialPageRoute(builder: (context) => MyHomePageState()));
             },
-            child: Text('To page 2'),),
+            child: Text('Noticias'),),
           ),
         );
       }
+      // ignore: non_constant_identifier_names
+
+  void _IrWebSite() {
+
   }
+}
